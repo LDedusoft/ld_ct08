@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@page import="com.ld.controller.*"%>
 <%
 
@@ -24,6 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page.kejklfajdfaldfads <br>
+    This is my JSP page.kejklfajdfaldfads 啊啊啊啊啊啊啊啊啊<br>
   </body>
 </html>
