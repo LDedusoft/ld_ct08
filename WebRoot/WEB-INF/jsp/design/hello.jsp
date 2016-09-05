@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   		<h3> ===============这是一个关于使用SpringMVC注解的程序。================</h3>
+   		<h3> ============== 国赛 ================</h3>
    		现在时间是：<%=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) %>
    		<button id="myButton">请求数据</button>
   </body>

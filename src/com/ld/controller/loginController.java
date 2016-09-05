@@ -16,6 +16,10 @@ import com.ld.utils.ConnectionManager;
 @Controller
 public class loginController {
 	
+	@RequestMapping(value="designLogin",method=RequestMethod.GET)
+	public String dsgLogin(){
+		return "/design/design_login";
+	}
 	
 	@RequestMapping(value="hello",method=RequestMethod.GET)
 	public String sayHello(){
