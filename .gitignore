@@ -1,0 +1,8 @@
+#Java class files
+*.class
+
+
+.settings/
+*.project
+*.mymetadata
+*.classpath
