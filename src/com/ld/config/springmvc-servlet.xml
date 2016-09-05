@@ -12,6 +12,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<mvc:view-controller path="/" view-name="redirect:/" />
 	
+	<mvc:resources mapping="/uimaker/**" location="/uimaker/"/>
 	<mvc:resources mapping="/easyui/**" location="/easyui/"/>
 	<mvc:resources mapping="/js/**" location="/js/"/>
 	<mvc:resources mapping="/css/**" location="/css/"/>

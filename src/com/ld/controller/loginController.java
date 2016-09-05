@@ -19,7 +19,7 @@ public class loginController {
 	
 	@RequestMapping(value="hello",method=RequestMethod.GET)
 	public String sayHello(){
-		return "hello";
+		return "/design/hello";
 	}
 	
 	@RequestMapping(value="login",method=RequestMethod.POST)
