@@ -25,7 +25,7 @@ $(function(){
 
 </head>
 
-<body style="background:url(images/topbg.gif) repeat-x;">
+<body style="background:url(<%=basePath%>/uimaker/images/topbg.gif) repeat-x;">
 
     <div class="topleft">
     <a href="main.html" target="_parent"><img src="<%=basePath%>/uimaker/images/logo.png" title="系统首页" /></a>
