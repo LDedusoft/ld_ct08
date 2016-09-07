@@ -4,7 +4,7 @@
      
     </default-config>
     
-    <named-config name="hsqlConfig">
+    <named-config name="defaultConfig">
         <property name="jdbcUrl">
             <![CDATA[
                jdbc:hsqldb:hsql://localhost/ld

@@ -12,7 +12,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 	 *  
 	 * @author gaoxianglong 
 	 */  
-	public class ConnectionManager {  
+	public class ConnManager {  
 //	    public static Connection getConnection() {  
 //	        Connection conn = null;  
 //	        try {  
@@ -63,9 +63,9 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 	    
 	    
 	    private static Connection conn;
-	    private static ComboPooledDataSource ds = new ComboPooledDataSource("hsqlConfig");
+	    private static ComboPooledDataSource ds = new ComboPooledDataSource("defaultConfig");
 
-	    public static Connection getConnection() {
+	    public static Connection getConn() {
 	        try {
 	            conn = ds.getConnection();
 	        } catch (SQLException e) {
@@ -75,5 +75,14 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 	        }
 	        return conn;
 	    }
+	    
+	    public static void closeConn(Connection conn){
+			try{
+				if(conn!=null&&!conn.isClosed())
+				conn.close();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}  
 

@@ -1,9 +1,12 @@
-﻿<%@page import="java.text.SimpleDateFormat"%>
+﻿<%@ page isELIgnored="false" %>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,10 +14,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>欢迎登录后台管理系统</title>
 <link href="<%=basePath%>/uimaker/css/style.css" rel="stylesheet" type="text/css" />
-<script language="JavaScript" src="<%=basePath%>/uimaker/js/jquery.js"></script>
-<script src="<%=basePath%>/uimaker/js/cloud.js" type="text/javascript"></script>
+<script language="JavaScript" src="<%=basePath%>uimaker/js/jquery.js"></script>
+<script language="JavaScript" src="<%=basePath%>js/loginUtils.js"></script>
+<script src="<%=basePath%>uimaker/js/cloud.js" type="text/javascript"></script>
 
 <script language="javascript">
+if("${error}"!=""){
+	alert("${error}");
+}
 	$(function(){
     $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
 	$(window).resize(function(){  
@@ -26,7 +33,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 
 <body style="background-color:#1c77ac; background-image:url(images/light.png); background-repeat:no-repeat; background-position:center top; overflow:hidden;">
-
 
 
     <div id="mainBody">
@@ -51,9 +57,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="loginbox">
     
     <ul>
-    <li><input name="" type="text" class="loginuser" value="admin" onclick="JavaScript:this.value=''"/></li>
-    <li><input name="" type="text" class="loginpwd" value="密码" onclick="JavaScript:this.value=''"/></li>
-    <li><input name="" type="button" class="loginbtn" value="登录"  onclick="javascript:window.location='main'"  /><label><input name="" type="checkbox" value="" checked="checked" />记住密码</label><label><a href="#">忘记密码？</a></label></li>
+    <form id="loginForm" method = 'post'  action = 'loginAction' >
+    <li><input id="userName" name="userName" type="text" class="loginuser" value="admin" onclick="JavaScript:this.value=''"/></li>
+    <li><input id="password" name="password" type="text" class="loginpwd" value="密码" onclick="JavaScript:this.value=''"/></li>
+    <li><input name="" type="button" class="loginbtn" value="登录"  onclick="loginAction();"  /><label><input name="" type="checkbox" value="" checked="checked" />记住密码</label><label><a href="#">忘记密码？</a></label></li>
+    </form>
     </ul>
     
     
