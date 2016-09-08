@@ -1,3 +1,4 @@
+<%@ page isELIgnored="false" %>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -27,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   $(function(){
       $("#myButton").click(function(){
         $.ajax({
-          url:"login",
+          url:"ajax",
           type:"post",
           dataType:"text",
           data:{
@@ -47,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   		<h3> ============== 国赛 ================</h3>
+   		<h3> ============== ${param} ================</h3>
    		现在时间是：<%=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) %>
    		<button id="myButton">请求数据</button>
   </body>
