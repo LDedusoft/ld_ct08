@@ -85,7 +85,7 @@ public class mainController {
 		return "/design/xitong_shezhi/zhanghao_Guanli";
 	}
 	
-	@RequestMapping(value="zhukao_Guanli",method=RequestMethod.GET)
+	@RequestMapping(value="zhuKaoGuanli",method=RequestMethod.GET)
 	public String dsgzhukao_Guanli(){
 		return "/design/xitong_shezhi/zhukao_Guanli";
 	}
