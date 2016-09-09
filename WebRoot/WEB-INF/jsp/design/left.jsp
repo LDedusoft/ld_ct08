@@ -19,6 +19,7 @@ if(session.getAttribute("userInfo")!=null){
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
 <link href="<%=basePath%>/uimaker/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="<%=basePath%>easyui/style/style.css" />
 <script language="JavaScript" src="<%=basePath%>/uimaker/js/jquery.js"></script>
 
 <script type="text/javascript">
