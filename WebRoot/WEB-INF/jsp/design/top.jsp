@@ -44,7 +44,7 @@ $(function(){
     <ul>
     <li><span><img src="<%=basePath%>/uimaker/images/help.png" title="帮助"  class="helpimg"/></span><a href="#">帮助</a></li>
     <li><a href="#">关于</a></li>
-    <li><a href="designLogin" target="_parent">退出</a></li>
+    <li><a href="designLogout" target="_parent">退出</a></li>
     </ul>
      
     <div class="user">

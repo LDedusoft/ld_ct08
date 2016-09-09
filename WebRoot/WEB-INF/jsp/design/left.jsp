@@ -1,8 +1,5 @@
 ﻿<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@page import="com.ld.dbPOJO.TbAdmins"%>
-<%@page import="com.ld.dbPOJO.ShTeacher"%>
-<%@page import="com.ld.dbPOJO.ShJiankao"%>
 <%@page import="com.ld.dbPOJO.TeacherUserInfo"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
@@ -42,6 +39,12 @@ $(function(){
 		}
 	});
 })	
+
+function showPage(url){
+	parent.document.getElementById("rightFrame").src=url;
+}
+
+function logout(){}
 </script>
 
 
@@ -74,45 +77,45 @@ $(function(){
     <dl class="leftmenu">
         
     <dd>
-    <div class="title">
+    <div class="title" onclick="showPage('shiTiGuanLi')">
     <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
     <a href="shiTiGuanLi" target="rightFrame">试题管理</a>
     </div>
     </dd>
     <dd>
-    <div class="title">
+    <div class="title" onclick="showPage('shiJuanGuanLi')">
     <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
-    <a href="index.html" target="rightFrame">试卷管理</a>
+    <a href="shiJuanGuanLi" target="rightFrame">试卷管理</a>
     </div>
     </dd> 
     <dd>
-    <div class="title">
+    <div class="title" onclick="showPage('biSaiGuanLi')">
     <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
-    <a href="index.html" target="rightFrame">比赛管理</a>
+    <a href="biSaiGuanLi" target="rightFrame">比赛管理</a>
     </div>
     </dd> 
     <dd>
-    <div class="title">
+    <div class="title" onclick="showPage('duiYuanGuanLi')">
     <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
-    <a href="index.html" target="rightFrame">参赛队员管理</a>
+    <a href="duiYuanGuanLi" target="rightFrame">参赛队员管理</a>
     </div>
     </dd> 
     <dd>
-    <div class="title">
+    <div class="title" onclick="showPage('biSaiTongJi')">
     <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
-    <a href="index.html" target="rightFrame">比赛统计</a>
+    <a href="biSaiTongJi" target="rightFrame">比赛统计</a>
     </div>
     </dd> 
     <dd>
-    <div class="title">
+    <div class="title" onclick="showPage('xiTongGuanLi')">
     <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
     <a href="xiTongGuanLi" target="rightFrame">系统设置</a>
     </div>
     </dd> 
     <dd>
-    <div class="title">
+    <div class="title" onclick="logout()">
     <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
-    <a href="index.html" target="rightFrame">退出系统</a>
+    <a href="javascript:void(0)" target="rightFrame">退出系统</a>
     </div>
     </dd> 
     </dl>

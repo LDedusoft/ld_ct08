@@ -26,6 +26,12 @@ public class loginController {
 	
 	@RequestMapping(value="designLogin",method=RequestMethod.GET)
 	public String dsgLogin(){
+		return "/design/design_login"; //退出登录，跳转到登录页面
+	}
+	
+	@RequestMapping(value="designLogout",method=RequestMethod.GET)
+	public String dsgLogout(HttpSession httpSession){
+		httpSession.removeAttribute("userInfo");
 		return "/design/design_login"; //打开design_login页面
 	}
 	
