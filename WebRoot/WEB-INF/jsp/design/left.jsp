@@ -51,7 +51,7 @@ function logout(){}
 
 </head>
 
-<body style="background:#f0f9fd;">
+<body style="background:#f9f9f9;">
 	<div class="lefttop"><span></span>用户信息</div>
     	<div class="head">
                 <div class="header">

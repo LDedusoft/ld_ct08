@@ -1,7 +1,6 @@
 body{
 	margin:0px;
 	padding:0px;
-	
 }
 
 .style-panel{
@@ -35,6 +34,7 @@ body{
 	width:186px;
 	height:90px;
 	border-right:1px solid #b7d5df;
+	border-bottom:1px solid #b7d5df;
 }
 .header{float:left}
 .userinfo{float:left}
