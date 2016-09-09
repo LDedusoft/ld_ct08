@@ -73,7 +73,7 @@ $(function(){
     <dd>
     <div class="title">
     <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
-    <a href="index.html" target="rightFrame">试题管理</a>
+    <a href="shiTiGuanLi" target="rightFrame">试题管理</a>
     </div>
     </dd>
     <dd>
@@ -103,7 +103,7 @@ $(function(){
     <dd>
     <div class="title">
     <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
-    <a href="index.html" target="rightFrame">系统设置</a>
+    <a href="xiTongGuanLi" target="rightFrame">系统设置</a>
     </div>
     </dd> 
     <dd>

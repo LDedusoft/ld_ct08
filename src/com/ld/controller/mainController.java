@@ -30,8 +30,6 @@ public class mainController {
 		try{
 		}catch(Exception e){e.printStackTrace();};
 		out.write(a);
-		
-		
 	}
 	  
 	    
@@ -61,7 +59,36 @@ public class mainController {
 		return "/design/index";
 	}
 	
+	@RequestMapping(value="shiTiGuanLi",method=RequestMethod.GET)
+	public String dsgSTList(){
+		return "/design/shiti_guanli/STList";
+	}
 	
+	
+	@RequestMapping(value="xiTongGuanLi",method=RequestMethod.GET)
+	public String dsgXT_Guanli(){
+		return "/design/xitong_shezhi/XT_Guanli";
+	}
+	
+	@RequestMapping(value="jianKaoGuanLi",method=RequestMethod.GET)
+	public String dsgjiankao_Guanli(){
+		return "/design/xitong_shezhi/jiankao_Guanli";
+	}
+	
+	@RequestMapping(value="xueXiaoGuanLi",method=RequestMethod.GET)
+	public String dsgxuexiao_Guanli(){
+		return "/design/xitong_shezhi/xuexiao_Guanli";
+	}
+	
+	@RequestMapping(value="zhangHaoGuanLi",method=RequestMethod.GET)
+	public String dsgzhanghao_Guanli(){
+		return "/design/xitong_shezhi/zhanghao_Guanli";
+	}
+	
+	@RequestMapping(value="zhukao_Guanli",method=RequestMethod.GET)
+	public String dsgzhukao_Guanli(){
+		return "/design/xitong_shezhi/zhukao_Guanli";
+	}
 
 	
 }

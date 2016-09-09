@@ -2915,3 +2915,24 @@
 .switchbutton-readonly {
   cursor: default;
 }
+
+.headTitle{
+ background:linear-gradient(to bottom,#EFF5FF 0,#E0ECFF 100%);
+ margin:0px;
+ padding-left:10px;
+ line-height:30px;
+ height:30px;
+ width:100%;
+ border:1px solid;
+ border-color:#95B8E7;
+ font-size: 12px;
+ font-weight: bold;
+ color: #0E2D5F;
+ height: 30px;
+ line-height: 30px;
+}
+
+body{
+	margin:0px;
+	padding:0px;
+}
