@@ -8,7 +8,10 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-TeacherUserInfo userInfo = (TeacherUserInfo)session.getAttribute("userInfo");
+TeacherUserInfo userInfo = new TeacherUserInfo();
+if(session.getAttribute("userInfo")!=null){
+	 userInfo = (TeacherUserInfo)session.getAttribute("userInfo");
+}
 
 
 
