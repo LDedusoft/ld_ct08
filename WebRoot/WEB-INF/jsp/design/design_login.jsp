@@ -7,6 +7,12 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
+String resultUserName= (String)request.getAttribute("userName");
+String resultPassword= (String)request.getAttribute("password");
+String resultType= (String)request.getAttribute("type");
+String resultError = (String)request.getAttribute("error");
+request.removeAttribute("error");
+
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,14 +25,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="<%=basePath%>uimaker/js/cloud.js" type="text/javascript"></script>
 
 <script language="javascript">
-if("${error}"!=""){
-	alert("${error}");
-}
+
 	$(function(){
+
     $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
 	$(window).resize(function(){  
     $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
     })  
+    
+    if("<%=resultError%>"!="null"){
+    //如果有错误信息 重新设置用户名密码和用户类型
+	$("#userName").val("<%=resultUserName%>");
+	$("#password").val("");
+	$("#type").find("option[text='<%=resultType%>']").attr("selected",true);
+	alert("<%=resultError%>");
+}
+	
 });  
 </script> 
 
@@ -58,9 +72,14 @@ if("${error}"!=""){
     
     <ul>
     <form id="loginForm" method = 'post'  action = 'loginAction' >
-    <li><input id="userName" name="userName" type="text" class="loginuser" value="admin" onclick="JavaScript:this.value=''"/></li>
-    <li><input id="password" name="password" type="text" class="loginpwd" value="密码" onclick="JavaScript:this.value=''"/></li>
-    <li><input name="" type="button" class="loginbtn" value="登录"  onclick="loginAction();"  /><label><input name="" type="checkbox" value="" checked="checked" />记住密码</label><label><a href="#">忘记密码？</a></label></li>
+    <li><input id="userName" name="userName" type="text" class="loginuser" value="admin"  onclick="JavaScript:this.value=''"/></li>
+    <li><input id="password" name="password" type="password" class="loginpwd" value="123456" onclick="JavaScript:this.value=''"/></li>
+    <li><select id="type" name="type" class="loginuser" style="width:343px;">
+	  <option value ="管理员">管理员</option>
+	  <option value ="主考">主考</option>
+	  <option value="监考">监考</option>
+	</select></li>
+    <li><input name="" type="button" class="loginbtn" value="登录"  onclick="loginAction();"  /></li>
     </form>
     </ul>
     

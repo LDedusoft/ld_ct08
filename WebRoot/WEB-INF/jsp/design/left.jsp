@@ -1,9 +1,17 @@
 ﻿<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="com.ld.dbPOJO.TbAdmins"%>
+<%@page import="com.ld.dbPOJO.ShTeacher"%>
+<%@page import="com.ld.dbPOJO.ShJiankao"%>
+<%@page import="com.ld.dbPOJO.TeacherUserInfo"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+TeacherUserInfo userInfo = (TeacherUserInfo)session.getAttribute("userInfo");
+
+
+
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -37,61 +45,73 @@ $(function(){
 </head>
 
 <body style="background:#f0f9fd;">
-	<div class="lefttop"><span></span>通讯录</div>
-    
+	<div class="lefttop"><span></span>用户信息</div>
+    	<div class="head">
+                <div class="header">
+                    <div id="Image1_Container" style="display:inline;">
+						<img id="Image1" src="<%=basePath%>/uimaker/images/i07.png" style="border: none; width: 56px; height: 66px;"/>
+					</div>
+                </div>
+                <div class="userinfo">
+                    <ul>
+                        <li>
+                            <div id="TextField1_Container" style="display:inline;"><%=userInfo.getUserName() %></div>
+                        </li>
+                        <li>
+                            <div id="TextField2_Container" style="display:inline;"><%=userInfo.getTeacherName() %></div>
+                        </li>
+                        <li><span></span>
+                            <div id="TextField3_Container" style="display:inline;"><%=userInfo.getUserType() %></div>
+                        </li>
+                    </ul>
+                </div>
+     </div>
+  
+    	
     <dl class="leftmenu">
         
     <dd>
     <div class="title">
-    <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>管理信息
+    <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
+    <a href="index.html" target="rightFrame">试题管理</a>
     </div>
-    	<ul class="menuson">
-        <li><cite></cite><a href="index.html" target="rightFrame">首页模版</a><i></i></li>
-        <li class="active"><cite></cite><a href="right.html" target="rightFrame">数据列表</a><i></i></li>
-        <li><cite></cite><a href="imgtable.html" target="rightFrame">图片数据表</a><i></i></li>
-        <li><cite></cite><a href="form.html" target="rightFrame">添加编辑</a><i></i></li>
-        <li><cite></cite><a href="imglist.html" target="rightFrame">图片列表</a><i></i></li>
-        <li><cite></cite><a href="imglist1.html" target="rightFrame">自定义</a><i></i></li>
-        <li><cite></cite><a href="tools.html" target="rightFrame">常用工具</a><i></i></li>
-        <li><cite></cite><a href="filelist.html" target="rightFrame">信息管理</a><i></i></li>
-        <li><cite></cite><a href="tab.html" target="rightFrame">Tab页</a><i></i></li>
-        <li><cite></cite><a href="error.html" target="rightFrame">404页面</a><i></i></li>
-        </ul>    
     </dd>
-        
-    
     <dd>
     <div class="title">
-    <span><img src="<%=basePath%>/uimaker/images/leftico02.png" /></span>其他设置
+    <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
+    <a href="index.html" target="rightFrame">试卷管理</a>
     </div>
-    <ul class="menuson">
-        <li><cite></cite><a href="#">编辑内容</a><i></i></li>
-        <li><cite></cite><a href="#">发布信息</a><i></i></li>
-        <li><cite></cite><a href="#">档案列表显示</a><i></i></li>
-        </ul>     
     </dd> 
-    
-    
-    <dd><div class="title"><span><img src="<%=basePath%>/uimaker/images/leftico03.png" /></span>编辑器</div>
-    <ul class="menuson">
-        <li><cite></cite><a href="#">自定义</a><i></i></li>
-        <li><cite></cite><a href="#">常用资料</a><i></i></li>
-        <li><cite></cite><a href="#">信息列表</a><i></i></li>
-        <li><cite></cite><a href="#">其他</a><i></i></li>
-    </ul>    
-    </dd>  
-    
-    
-    <dd><div class="title"><span><img src="<%=basePath%>/uimaker/images/leftico04.png" /></span>日期管理</div>
-    <ul class="menuson">
-        <li><cite></cite><a href="#">自定义</a><i></i></li>
-        <li><cite></cite><a href="#">常用资料</a><i></i></li>
-        <li><cite></cite><a href="#">信息列表</a><i></i></li>
-        <li><cite></cite><a href="#">其他</a><i></i></li>
-    </ul>
-    
-    </dd>   
-    
+    <dd>
+    <div class="title">
+    <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
+    <a href="index.html" target="rightFrame">比赛管理</a>
+    </div>
+    </dd> 
+    <dd>
+    <div class="title">
+    <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
+    <a href="index.html" target="rightFrame">参赛队员管理</a>
+    </div>
+    </dd> 
+    <dd>
+    <div class="title">
+    <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
+    <a href="index.html" target="rightFrame">比赛统计</a>
+    </div>
+    </dd> 
+    <dd>
+    <div class="title">
+    <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
+    <a href="index.html" target="rightFrame">系统设置</a>
+    </div>
+    </dd> 
+    <dd>
+    <div class="title">
+    <span><img src="<%=basePath%>/uimaker/images/leftico01.png" /></span>
+    <a href="index.html" target="rightFrame">退出系统</a>
+    </div>
+    </dd> 
     </dl>
     
 </body>
