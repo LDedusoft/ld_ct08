@@ -38,8 +38,6 @@ if(session.getAttribute("userInfo")!=null){
 			
 			
 		(function($){
-			
-		
 			function pagerFilter(data){
 				if ($.isArray(data)){	// is array
 					data = {
@@ -165,6 +163,27 @@ if(session.getAttribute("userInfo")!=null){
 			
 		});
 		
+		function searchBtn(){
+			$.ajax({   
+			     url:'<%=basePath%>getShiTi2',   
+			     type:'post',   
+			     dataType: 'json',  
+			     data:'userName=<%=userInfo.getUserName()%>',      
+			     async : true, //异步   
+			     error:function(){   
+			        alert('error');   
+			     },   
+			     success:function(jsonData){  
+			     	$('#dg').datagrid('getPager').data("pagination").options.pageNumber=1; 
+			     	$('#dg').datagrid('loadData',jsonData); 
+			     	$('#dg').datagrid('loadData',jsonData);  //这里需要执行两次
+
+			      
+			         
+			     }
+			 });
+		}
+		
 	</script>	
 </head>
 <body>
@@ -178,7 +197,7 @@ if(session.getAttribute("userInfo")!=null){
 		    <option>ditem4</option>
 		    <option>eitem5</option>
 		</select>
-		<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+		<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="searchBtn();" style="width:80px">Search</a>
 		<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload'" style="width:80px">Reload</a>
 		</div>
 		<div style="margin-top:3px;"></div>
