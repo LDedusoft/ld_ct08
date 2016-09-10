@@ -6,3 +6,4 @@
 *.project
 *.mymetadata
 *.classpath
+*.externalToolBuilders

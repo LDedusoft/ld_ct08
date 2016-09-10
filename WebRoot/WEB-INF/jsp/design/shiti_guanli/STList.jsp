@@ -176,10 +176,7 @@ if(session.getAttribute("userInfo")!=null){
 			     	$('#dg').datagrid({data:[]}).datagrid('clientPaging'); 
 			     	$('#dg').datagrid('loadData',jsonData);
 			     	$('#dg').datagrid('loadData',jsonData);  //这里需要执行两次
-			     	
-
-			      
-			         
+			     	 
 			     }
 			 });
 		}
@@ -189,7 +186,7 @@ if(session.getAttribute("userInfo")!=null){
 <body>
 <div id="p" class="easyui-panel style-panel" title="试题管理">
 		<div class="style-toolbar">
-		<label class="x-form-item-label" style="width:65px;" id="ext-gen22">试题类型:</label>
+		<label class="x-form-item-label" style="width:65px;" id="ext-gen22"> 试题类型:</label>
 		<select id="cc" class="easyui-combobox" name="dept" style="width:200px;">
 		    <option value="aa">aitem1</option>
 		    <option>bitem2</option>
