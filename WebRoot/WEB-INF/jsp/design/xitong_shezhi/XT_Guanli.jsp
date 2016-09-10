@@ -23,20 +23,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="backHome" style="width:100%;height:30px;">
         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'" style="width:80px;margin-left:2px;margin-top:2px;">返回首页</a>
     </div>
-    <div class="easyui-tabs" style="width:100%;height:484px;">
+    <div id="tt" class="easyui-tabs" style="width:100%;height:484px;">
         <div title="主考管理">
-            <iframe style="width:100%;height:450px;" scrolling="no" frameborder="0"  src="zhuKaoGuanLi"></iframe>
+            <iframe id="zk" style="width:100%;height:450px;" scrolling="no" frameborder="0" src=""></iframe>
         </div>
         <div title="监考管理">
-             <iframe style="width:100%;height:450px;" scrolling="no" frameborder="0" src="jianKaoGuanLi"></iframe>
+             <iframe id="jk" style="width:100%;height:450px;" scrolling="no" frameborder="0" src=""></iframe>
         </div>
         <div title="账号管理">
-            <iframe style="width:100%;height:450px;" scrolling="no" frameborder="0" src="zhangHaoGuanLi"></iframe>
+            <iframe id="zh" style="width:100%;height:450px;" scrolling="no" frameborder="0" src=""></iframe>
          </div>
         <div title="学校管理">
-            <iframe style="width:100%;height:450px;" scrolling="no" frameborder="0" src="xueXiaoGuanLi"></iframe>
+            <iframe id="xx" style="width:100%;height:450px;" scrolling="no" frameborder="0" src=""></iframe>
         </div>
     </div>
     </div>
+    <script>
+    $('#tt').tabs({
+        border:false,
+        onSelect:function(title){
+            var tab = $('#tt').tabs('getSelected');
+            var index = $('#tt').tabs('getTabIndex',tab);
+            var win;
+            switch(index){
+            case 0:
+                win = document.getElementById("zk");
+                if(win.src.indexOf("zhuKaoGuanLi")==-1){
+                    win.src="zhuKaoGuanLi";
+                }
+            break;
+            case 1:
+                win = document.getElementById("jk");
+                if(win.src.indexOf("jianKaoGuanLi")==-1){
+                win.src="jianKaoGuanLi";
+                }
+            break;
+            case 2:
+                win = document.getElementById("zh");
+                if(win.src.indexOf("zhangHaoGuanLi")==-1){
+                win.src="zhangHaoGuanLi";
+                }
+            break;
+            case 3:
+                win = document.getElementById("xx");
+                if(win.src.indexOf("xueXiaoGuanLi")==-1){
+                win.src="xueXiaoGuanLi";
+                }
+            break;
+            }
+        }
+    });
+
+    </script>
 </body>
 </html>
