@@ -157,9 +157,8 @@ if(session.getAttribute("userInfo")!=null){
 			//return rows;
 		}
 		$(function(){
-		//	$('#dg').datagrid({data:[]}).datagrid('clientPaging'); //初始化空表格
 		$('#dg').css("display","none"); //初始化时隐藏表格
-			getData();//ajax获取数据，重新加载表格
+		getData();//ajax获取数据，重新加载表格
 			
 		});
 		
@@ -169,14 +168,15 @@ if(session.getAttribute("userInfo")!=null){
 			     type:'post',   
 			     dataType: 'json',  
 			     data:'userName=<%=userInfo.getUserName()%>',      
-			     async : true, //异步   
+			     async : false, //异步   
 			     error:function(){   
 			        alert('error');   
 			     },   
 			     success:function(jsonData){  
-			     	$('#dg').datagrid('getPager').data("pagination").options.pageNumber=1; 
-			     	$('#dg').datagrid('loadData',jsonData); 
+			     	$('#dg').datagrid({data:[]}).datagrid('clientPaging'); 
+			     	$('#dg').datagrid('loadData',jsonData);
 			     	$('#dg').datagrid('loadData',jsonData);  //这里需要执行两次
+			     	
 
 			      
 			         
